@@ -13,6 +13,14 @@ class Assetlist(Resource):
     def get(self):
         return {'assets': assets}, 200
 
+class Tasklist(Resource):
+    def get(self):
+        return {'tasks': tasks}, 200
+
+class Workerlist(Resource):
+    def get(self):
+        return {'workers': workers}, 200
+
 class Assetadd(Resource):
     def post(self):
         # if request.args != 2:
@@ -120,6 +128,8 @@ api.add_resource(Assetadd, '/add-asset')
 api.add_resource(Task, '/add-task')
 api.add_resource(Worker, '/add-worker')
 api.add_resource(Assetlist, '/asset/all')
+api.add_resource(Tasklist, '/task/all')
+api.add_resource(Workerlist, '/worker/all')
 api.add_resource(Assetallocate, '/allocate-task')
 api.add_resource(Workertasks, '/get-tasks-for-worker/<int:w_id>')
 
